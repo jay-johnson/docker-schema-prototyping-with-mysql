@@ -245,7 +245,7 @@ $
 
 ### Troubleshooting and Debugging
 
-There is a [known issue building httpd on Ubuntu](https://github.com/docker/hub-feedback/issues/461) so this container uses the [container_files/db-loaders/bin/configure_phpmyadmin.sh](/docker-schema-prototyping-with-mysql/tree/master/db-loaders/bin/configure_phpmyadmin.sh) and [container_files/db-loaders/bin/configure_httpd.sh](/docker-schema-prototyping-with-mysql/tree/master/db-loaders/bin/configure_httpd.sh) to install apache and php after starting. This means the container can take a few seconds to download and yum install these components. I plan on fixing this once the issue is resolved, but for now please be patient and things should start up.
+There is a [known issue building httpd on Ubuntu](https://github.com/docker/hub-feedback/issues/461) so this container uses the [container_files/db-loaders/bin/configure_phpmyadmin.sh](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/container_files/db-loaders/bin/configure_phpmyadmin.sh) and [container_files/db-loaders/bin/configure_httpd.sh](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/container_files/db-loaders/bin/configure_httpd.sh) to install apache and php after starting. This means the container can take a few seconds to download and yum install these components. I plan on fixing this once the issue is resolved, but for now please be patient and things should start up.
 
 #### Internal Container Applications and Components
 
