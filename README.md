@@ -205,7 +205,7 @@ The docker-compose.yml file is reponsible for assigning environment variables th
 
 1. The default login for this database is: 
 
-[dbadmin / dbadmin123](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/docker-compose.yml#L9-L10)
+[dbadmin / dbadmin123](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/189207628aaa78dce57ca13cbdce4f1fd541f12e/docker-compose.yml#L16-L17)
 
 
 ### Stop the Container
@@ -221,19 +221,17 @@ $
 
 Just override the db_schema.py file:
 
-[https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/db-loaders/schema/db_schema.py](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/db-loaders/schema/db_schema.py)
+[container_files/db-loaders/schema/db_schema.py](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/189207628aaa78dce57ca13cbdce4f1fd541f12e/container_files/db-loaders/schema/db_schema.py#L24-L41)
 
 ### Want to initialize the Database with some records?
 
-Just define your own method:
+Just [define your own method for writing seed records](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/189207628aaa78dce57ca13cbdce4f1fd541f12e/container_files/db-loaders/schema/initialize_db.py#L44)
 
-https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/db-loaders/schema/initialize_db.py
-
-By default this container writes the CSV files from the [data](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/tree/master/db-loaders/data) directory and [adds the the the database by iterating over the CSV files](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/db-loaders/schema/initialize_db.py#L106-L195)
+By default this container writes the CSV files from the [data](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/tree/master/container_files/db-loaders/data) directory and [adds each Stock Data Point to the database by iterating over each CSV file row by row](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/189207628aaa78dce57ca13cbdce4f1fd541f12e/container_files/db-loaders/schema/initialize_db.py#L117-L172)
 
 ### Use the MySQL Instance
 
-By default the mysql instance is listening on your host at: ```0.0.0.0:3307``` with a mysql uri: ```mysql://dbadmin:dbadmin123@0.0.0.0:3307/stocks```, but you can change it [here](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/master/docker-compose.yml#L15)
+By default the mysql instance is listening on your host at: ```0.0.0.0:3307``` with a mysql uri: ```mysql://dbadmin:dbadmin123@0.0.0.0:3307/stocks```, but you can change it [here](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/189207628aaa78dce57ca13cbdce4f1fd541f12e/docker-compose.yml#L23) and [here](https://github.com/jay-johnson/docker-schema-prototyping-with-mysql/blob/189207628aaa78dce57ca13cbdce4f1fd541f12e/docker-compose.yml#L15)
 
 ### Building the Container
 
@@ -244,7 +242,6 @@ $ ./build.sh
 Building new Docker image(docker.io/jayjohnson/schemaprototyping)
 $
 ```
-
 
 ### Troubleshooting and Debugging
 
