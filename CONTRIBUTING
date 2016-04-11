@@ -1,0 +1,22 @@
+Contributing
+---------------
+
+This section gives an overview of how to contribute.
+
+#### Pull requests are always welcome
+
+We will appreciate any contributions no matter how small. Your time is valuable so thank you in advance. We are always excited to receive pull requests, and we do our best to process them quickly. 
+
+Any significant improvement should be documented as a GitHub issue before anybody starts working on it. This will help us coordinate, track and prioritize development.
+
+Here is a general way to contribute:
+
+1. Fork this repository to your GitHub account
+1. Clone the Fork repository
+1. Create a feature branch off master
+1. Commit changes and tests to the feature branch
+1. When the code is ready, open a Pull Request for merging your Fork's feature branch into master
+1. We will review the Pull Request and address any questions in the comments section of the Pull Request
+1. After an initial "Looks Good", we will initiate a regression test where the feature branch is applied to master and confirm nothing breaks
+1. If something breaks we will add comments to the Pull Request documenting the failure and help work through solutions with you
+1. Once everything passes we will merge your feature branch into master

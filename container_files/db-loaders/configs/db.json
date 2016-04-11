@@ -1,0 +1,17 @@
+{
+    "Database Applications": [
+        {
+            "Name":             "STOCKS",
+            "Schema":           "/opt/vehement/schema/db_schema_vehement_stocks.py",
+            "Initializer":      "/opt/vehement/schema/build_vehement_stock_db.py",
+            "Address List":     "localhost:3306",
+            "Database Name":    "stocks",
+            "Password":         "123321",
+            "User":             "root",
+            "Type":             "MySQL",
+            "Autocommit":       "False",
+            "Autoflush":        "False",
+            "Debug":            "False"
+        }
+    ]
+}

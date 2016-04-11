@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  db:
+    image: jayjohnson/schemaprototyping
+    container_name: "schemaprototyping"
+    hostname: "mysql1"
+    networks:
+      - dbprototyping
+    environment:
+      - REBUILD_DB_ON_START=1
+      - DBNAME=stocks
+      - DBHOST=127.0.0.1
+      - DBADDRESS=127.0.0.1
+      - DBPORT=3306
+      - DBUSER=dbadmin
+      - DBPASS=dbadmin123
+      - DBSCHEMA=/opt/db-loaders/schema/db_schema.py
+      - DBINITIALIZER=/opt/db-loaders/schema/initialize_db.py
+      - DATADIR=/var/lib/mysql
+    ports:
+      - "81:80"
+      - "3307:3306"
+    cap_add:
+      - ALL
+      - NET_ADMIN
+      - SYS_ADMIN
+    #volumes:
+      #- /opt/mysql:/var/lib/mysql
+
+networks:
+  dbprototyping:
+    driver: bridge
