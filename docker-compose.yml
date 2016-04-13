@@ -21,10 +21,6 @@ services:
     ports:
       - "81:80"
       - "3307:3306"
-    cap_add:
-      - ALL
-      - NET_ADMIN
-      - SYS_ADMIN
     #volumes:
       #- /opt/mysql:/var/lib/mysql
 
